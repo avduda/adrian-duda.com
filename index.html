@@ -99,6 +99,20 @@ dt{color:var(--muted);font-size:15px}
 footer{padding:26px max(5vw,16px);color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media(max-width:1100px){.caps{grid-template-columns:minmax(0,1fr)}}
+
+.demo{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:22px;align-items:start}
+.player{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#000;aspect-ratio:16/9}
+.player video{width:100%;height:100%;display:block}
+.dlist{display:grid;gap:12px}
+.dbtn{display:grid;grid-template-columns:120px minmax(0,1fr);gap:14px;align-items:center;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;color:var(--ink);font:inherit;cursor:pointer;transition:border-color .2s,background .2s}
+.dbtn img{width:120px;aspect-ratio:16/9;object-fit:cover;border-radius:8px;display:block}
+.dbtn b{display:block;font-size:16px;font-weight:600}
+.dbtn span{display:block;font-size:13.5px;color:var(--muted);margin-top:3px;line-height:1.35}
+.dbtn:hover{border-color:color-mix(in srgb,var(--teal) 50%,var(--line))}
+.dbtn[aria-pressed="true"]{border-color:var(--teal);background:var(--teal-d)}
+.dbtn:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.dnote{font-size:13.5px;color:var(--muted);margin-top:12px}
+@media(max-width:900px){.demo{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:900px){.caps{grid-template-columns:repeat(2,minmax(0,max-content))}.hero,.head,.about,.contact .wrap{grid-template-columns:minmax(0,1fr)}.grid4{grid-template-columns:minmax(0,1fr)}.case,.case.flip{grid-template-columns:minmax(0,1fr)}.case.flip .pic{order:0}.steps{grid-template-columns:minmax(0,1fr)}.contact .cta{justify-content:flex-start}.contact .mail{text-align:left}}
 @media(max-width:600px){.caps{grid-template-columns:minmax(0,1fr)}.caps li{white-space:normal}.links{display:none}.svc{grid-template-columns:minmax(0,1fr)}.lede{font-size:17.5px}dl{grid-template-columns:minmax(0,1fr)}dt{padding-bottom:0;border:0}}
 </style>
@@ -106,7 +120,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <body>
 <nav><div class="wrap">
 <a class="brand" href="#top">Adrian V. Duda</a>
-<div class="links"><a href="#services">Services</a><a href="#work">Work</a><a href="#how">How I work</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+<div class="links"><a href="#services">Services</a><a href="#demos">Demos</a><a href="#work">Work</a><a href="#how">How I work</a><a href="#about">About</a><a href="#contact">Contact</a></div>
 </div></nav>
 
 <header class="band" id="top"><div class="wrap hero">
@@ -117,7 +131,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <p class="lede">I build AI that works with your documents and tools, dashboards that show where your processes get stuck, and the cloud platforms underneath, in the cloud or on&#8209;premise.</p>
 <div class="cta">
 <a class="btn primary" href="https://www.linkedin.com/in/adrian-vasile-duda/" target="_blank" rel="noopener">Message me on LinkedIn</a>
-<a class="btn ghost" href="#work">See case studies</a>
+<a class="btn ghost" href="#demos">Watch the demos</a>
 </div>
 <div class="facts"><span><b>20+ years</b> in IT</span><span><b>M.Sc.</b> in Artificial Intelligence</span><span><b>US patent</b> holder</span></div>
 </div>
@@ -161,12 +175,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <div class="grid4" id="svc"></div>
 </div></section>
 
-<section class="band" id="work"><div class="wrap">
+<section class="band" id="demos"><div class="wrap">
+<div class="head"><h2>See it in action</h2><p>Short animated demos of what each kind of work looks like for you. Pick one to play.</p></div>
+<div class="demo">
+<div><div class="player"><video id="dv" controls playsinline preload="none" poster="ai-agents.webp" src="ai-agents.mp4"></video></div>
+<p class="dnote">Sound on for soft background music. All numbers shown are examples.</p></div>
+<div class="dlist" id="dlist"></div>
+</div>
+</div></section>
+
+<section class="band alt" id="work"><div class="wrap">
 <div class="head"><h2>Recent work</h2><p>Three projects from the last few years, for companies in France and the US.</p></div>
 <div id="cases"></div>
 </div></section>
 
-<section class="band alt" id="how"><div class="wrap">
+<section class="band" id="how"><div class="wrap">
 <div class="head"><h2>How I work</h2><p>Not spectacular. Just useful, every day.</p></div>
 <div class="steps">
 <div class="step"><div class="n">1</div><h3>Start small</h3><p>We agree on one clear problem and what a good result looks like. No long specification up front.</p></div>
@@ -175,7 +198,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </div>
 </div></section>
 
-<section class="band" id="about"><div class="wrap about">
+<section class="band alt" id="about"><div class="wrap about">
 <div>
 <div class="me"><img src="adrian.webp" alt="Adrian V. Duda" width="400" height="400"><div><h2>About me</h2><p class="muted" style="margin-top:6px">Adrian V. Duda · Athens, Greece</p></div></div>
 <p class="muted" style="margin-top:22px">I've worked in IT for more than 20 years, and artificial intelligence has been the thread through most of it: an M.Sc. in AI, a US patent in predictive analytics at Orange Labs, algorithm development for automotive at Continental, real-time machine learning for a stress-detection sensor, and today AI agents and LLM apps built on company data.</p>
@@ -273,6 +296,19 @@ const still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduc
 const tick=()=>{fade.forEach(e=>e.style.opacity=0); setTimeout(()=>{k=(k+1)%qs.length; show(k); fade.forEach(e=>e.style.opacity=1);},still?0:350);};
 setInterval(tick,still?6000:4200);
 }
+
+const demos=[
+ {f:'ai-agents',t:'AI agents & LLM apps',d:'Ask questions in plain language, get answers with charts, and let the agent do the follow-up work.',l:'0:43'},
+ {f:'live-dashboards',t:'Live dashboards & process insights',d:'Filter by team, explore a process map, spot patterns in a heatmap, and get an AI explanation.',l:'0:54'},
+ {f:'aws-cloud',t:'Cloud: optimize, secure, migrate',d:'A lower bill, a security score going up, a planned migration, and monitoring afterwards.',l:'0:45'},
+ {f:'workflow-automation',t:'AI workflow automation',d:'Incoming emails sorted and handled automatically, with the hours saved measured.',l:'0:43'}
+];
+const dv=document.getElementById('dv'),dl=document.getElementById('dlist');
+dl.innerHTML=demos.map((x,i)=>`<button class="dbtn" type="button" data-i="${i}" aria-pressed="${i===0}"><img src="${x.f}.webp" alt="" width="120" height="68" loading="lazy"><div><b>${x.t}</b><span>${x.d} · ${x.l}</span></div></button>`).join('');
+dl.addEventListener('click',e=>{const b=e.target.closest('.dbtn');if(!b)return;const x=demos[+b.dataset.i];
+ dl.querySelectorAll('.dbtn').forEach(q=>q.setAttribute('aria-pressed',q===b));
+ dv.poster=`./${x.f}.webp`;dv.src=`./${x.f}.mp4`;dv.play().catch(()=>{});
+ if(window.innerWidth<900)dv.scrollIntoView({behavior:'smooth',block:'center'});});
 (function(){var a=document.getElementById('mail');if(!a)return;var e=a.dataset.u+'@'+a.dataset.d;a.textContent=e;a.href='mailto:'+e;})();
 </script>
 </body>
