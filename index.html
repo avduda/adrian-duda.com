@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adrian V. Duda</title>
+<meta name="description" content="Freelance AI & Cloud Consultant with 20+ years in IT. AI agents, LLM apps and live dashboards that work with your company data. Remote, Europe and worldwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE work: a senior consultant's site, calm and exact
+   IDEA a live operations board: data flowing in, an agent in the middle, answers and flags coming out
+   PICTURE large flow diagram in the hero, sources to AI agent to live dashboard, with a flagged bottleneck
+   COLOUR his brand: deep navy ground in both themes, ice text, teal accent, amber only for flags
+   TYPE Space Grotesk headings + Inter text
+   LAYOUT laptop: title and call to action left, picture right; phone: title, picture, buttons */
+:root{color-scheme:dark;--bg:#0B1220;--bg2:#0F1828;--card:#111A2B;--line:#22304A;--ink:#F1F5F9;--muted:#A3B1C6;--teal:#2DD4BF;--teal-d:#0F2528;--amber:#F59E0B}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1{font-size:clamp(34px,4.1vw,50px);line-height:1.05;font-weight:600}
+h2{font-size:clamp(28px,3.2vw,40px);line-height:1.08;font-weight:600}
+h3{font-size:21px;line-height:1.2;font-weight:600}
+p{margin:0}
+a{color:var(--teal)}
+img{max-width:100%;display:block}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding-block:clamp(48px,6vw,96px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+.alt{background:var(--bg2);border-block:1px solid var(--line)}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px max(5vw,16px);flex-wrap:wrap}
+.brand{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:19px;color:var(--ink);text-decoration:none}
+.links{display:flex;gap:22px;flex-wrap:wrap}
+.links a{color:var(--muted);text-decoration:none;font-size:15px}
+.links a:hover,.links a:focus-visible{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:12px;font-weight:600;text-decoration:none;font-size:16px;border:1px solid transparent;transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.primary{background:var(--teal);color:#06222E}
+.ghost{border-color:var(--line);color:var(--ink)}
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center}
+.lede{font-size:18px;color:var(--muted);margin-top:20px;max-width:34em}
+.caps{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,max-content));gap:10px 22px}
+.caps li{position:relative;padding-left:22px;font-weight:500;white-space:nowrap}
+.caps li::before{content:"";position:absolute;left:0;top:.45em;width:10px;height:10px;border-radius:3px;background:var(--teal)}
+.q{transition:opacity .35s ease}
+.role{display:flex;gap:10px;align-items:baseline;color:var(--ink);font-weight:500;margin-bottom:18px}
+.dot{flex:none;width:10px;height:10px;border-radius:50%;transform:translateY(-1px);background:var(--teal);box-shadow:0 0 0 5px color-mix(in srgb,var(--teal) 22%,transparent)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:30px;color:var(--muted);font-size:15px}
+.facts b{color:var(--ink);font-weight:600}
+.fig{position:relative;aspect-ratio:600/470;width:100%}
+.fig svg{position:absolute;inset:0;width:100%;height:100%}
+.fig text{font-family:Inter,sans-serif}
+.flow{stroke-dasharray:6 8}
+@media(prefers-reduced-motion:reduce){.btn,.q{transition:none}}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-bottom:40px}
+.head p{color:var(--muted);font-size:17.5px}
+.grid4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;display:grid;grid-template-columns:56px minmax(0,1fr);gap:18px}
+.svc svg{width:56px;height:56px}
+.svc p{color:var(--muted);margin-top:8px}
+.svc ul{margin:14px 0 0;padding-left:18px;color:var(--ink)}
+.svc li{margin:4px 0}
+.case{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;padding-block:34px;border-top:1px solid var(--line)}
+.case:first-of-type{border-top:0;padding-top:0}
+.case img{border-radius:16px;border:1px solid var(--line);width:100%;height:auto}
+.case.flip .pic{order:2}
+.where{color:var(--teal);font-weight:600;font-size:15px;margin-bottom:10px}
+.case p{color:var(--muted);margin-top:12px}
+.case ul{margin:16px 0 0;padding:0;list-style:none}
+.case li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid var(--line)}
+.case li::before{content:"";position:absolute;left:4px;top:15px;width:12px;height:12px;border-radius:50%;border:2px solid var(--teal)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.step{border-top:3px solid var(--teal);padding-top:18px}
+.step .n{font-family:"Space Grotesk",sans-serif;font-size:44px;font-weight:600;color:var(--teal);line-height:1}
+.step h3{margin-top:12px}
+.step p{color:var(--muted);margin-top:8px}
+.about{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px)}
+.about p+p{margin-top:14px}
+.about .muted{color:var(--muted)}
+dl{margin:0;display:grid;grid-template-columns:max-content minmax(0,1fr);gap:0 20px}
+dt,dd{padding:12px 0;border-bottom:1px solid var(--line);margin:0}
+dt{color:var(--muted);font-size:15px}
+.clients{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14.5px;color:var(--ink)}
+.contact{background:var(--teal-d);border-top:1px solid color-mix(in srgb,var(--teal) 35%,transparent)}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:center}
+.contact p{color:var(--muted);margin-top:14px;font-size:17.5px}
+.contact .cta{justify-content:flex-end;margin-top:0}
+footer{padding:26px max(5vw,16px);color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:1100px){.caps{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:900px){.caps{grid-template-columns:repeat(2,minmax(0,max-content))}.hero,.head,.about,.contact .wrap{grid-template-columns:minmax(0,1fr)}.grid4{grid-template-columns:minmax(0,1fr)}.case,.case.flip{grid-template-columns:minmax(0,1fr)}.case.flip .pic{order:0}.steps{grid-template-columns:minmax(0,1fr)}.contact .cta{justify-content:flex-start}}
+@media(max-width:600px){.caps{grid-template-columns:minmax(0,1fr)}.caps li{white-space:normal}.links{display:none}.svc{grid-template-columns:minmax(0,1fr)}.lede{font-size:17.5px}dl{grid-template-columns:minmax(0,1fr)}dt{padding-bottom:0;border:0}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="brand" href="#top">Adrian V. Duda</a>
+<div class="links"><a href="#services">Services</a><a href="#work">Work</a><a href="#how">How I work</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+</div></nav>
+
+<header class="band" id="top"><div class="wrap hero">
+<div>
+<div class="role"><span class="dot" aria-hidden="true"></span>Freelance AI &amp; Cloud Consultant · Athens, Greece · Remote</div>
+<h1>Your company data, turned into answers, live insights and automated work</h1>
+<ul class="caps"><li>AI agents &amp; LLM apps</li><li>Live dashboards &amp; process insights</li><li>Cloud migration &amp; optimization</li><li>Workflow automation</li></ul>
+<p class="lede">I build AI that works with your documents and tools, dashboards that show where your processes get stuck, and the cloud platforms underneath, in the cloud or on&#8209;premise.</p>
+<div class="cta">
+<a class="btn primary" href="https://www.linkedin.com/in/adrian-vasile-duda/" target="_blank" rel="noopener">Message me on LinkedIn</a>
+<a class="btn ghost" href="#work">See case studies</a>
+</div>
+<div class="facts"><span><b>20+ years</b> in IT</span><span><b>M.Sc.</b> in Artificial Intelligence</span><span><b>US patent</b> holder</span></div>
+</div>
+<div class="fig" role="img" aria-label="Diagram: data from documents, databases and business tools flows to an AI agent, which answers questions in plain language, keeps a live dashboard that flags bottlenecks, and completes routine tasks automatically">
+<svg viewBox="0 0 600 470" aria-hidden="true">
+<defs>
+<linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#15233A"/><stop offset="1" stop-color="#0F1828"/></linearGradient>
+<linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#123236"/><stop offset="1" stop-color="#0F2528"/></linearGradient>
+</defs>
+<g id="sources"></g>
+<g fill="none" stroke="#2DD4BF" stroke-width="2" opacity=".7">
+<path class="flow" d="M142 95 C190 95 195 215 226 222"/>
+<path class="flow" d="M142 235 L226 235"/>
+<path class="flow" d="M142 375 C190 375 195 255 226 248"/>
+<path class="flow" d="M354 215 C385 200 385 85 408 78"/>
+<path class="flow" d="M354 235 L408 235"/>
+<path class="flow" d="M354 255 C385 270 385 395 408 402"/>
+</g>
+<rect x="226" y="163" width="128" height="144" rx="22" fill="url(#g2)" stroke="#2DD4BF" stroke-width="2.5"/>
+<circle cx="290" cy="209" r="24" fill="#2DD4BF" opacity=".18"/><circle cx="290" cy="209" r="11" fill="#2DD4BF"/>
+<text x="290" y="263" text-anchor="middle" font-size="19" font-weight="700" fill="#F1F5F9">AI agent</text>
+<text x="290" y="285" text-anchor="middle" font-size="13" fill="#A3B1C6">private &amp; secure</text>
+<rect x="408" y="12" width="186" height="134" rx="16" fill="url(#g1)" stroke="#22304A" stroke-width="1.5"/>
+<text x="424" y="38" font-size="12.5" fill="#A3B1C6">Ask in plain language</text>
+<g class="q" id="qa"><text x="424" y="63" font-size="14" font-weight="600" fill="#F1F5F9" id="q1"></text><text x="424" y="82" font-size="14" font-weight="600" fill="#F1F5F9" id="q2"></text>
+<text x="424" y="112" font-size="13" fill="#2DD4BF" id="a1"></text><text x="424" y="130" font-size="13" fill="#2DD4BF" id="a2"></text></g>
+<rect x="408" y="162" width="186" height="168" rx="16" fill="url(#g1)" stroke="#22304A" stroke-width="1.5"/>
+<text x="424" y="188" font-size="12.5" fill="#A3B1C6">Live dashboard</text>
+<circle cx="576" cy="184" r="5" fill="#2DD4BF"/>
+<g id="bars"></g>
+<rect x="500" y="200" width="78" height="22" rx="11" fill="#F59E0B"/>
+<text x="539" y="215" text-anchor="middle" font-size="12" font-weight="700" fill="#0B1220">Bottleneck</text>
+<g id="steps"></g>
+<rect x="408" y="346" width="186" height="112" rx="16" fill="url(#g1)" stroke="#22304A" stroke-width="1.5"/>
+<text x="424" y="372" font-size="12.5" fill="#A3B1C6">Done automatically</text>
+<g id="acts"></g>
+</svg>
+</div>
+</div></header>
+
+<section class="band alt" id="services"><div class="wrap">
+<div class="head"><h2>What I can do for you</h2><p>Four kinds of work, each starting with a small, fixed first step, so you can see results before committing to more.</p></div>
+<div class="grid4" id="svc"></div>
+</div></section>
+
+<section class="band" id="work"><div class="wrap">
+<div class="head"><h2>Recent work</h2><p>Three projects from the last few years, for companies in France and the US.</p></div>
+<div id="cases"></div>
+</div></section>
+
+<section class="band alt" id="how"><div class="wrap">
+<div class="head"><h2>How I work</h2><p>Not spectacular. Just useful, every day.</p></div>
+<div class="steps">
+<div class="step"><div class="n">1</div><h3>Start small</h3><p>We agree on one clear problem and what a good result looks like. No long specification up front.</p></div>
+<div class="step"><div class="n">2</div><h3>Deliver early</h3><p>You see something working on your own data within days or weeks, not months.</p></div>
+<div class="step"><div class="n">3</div><h3>Improve in short steps</h3><p>We refine it together, then hand it over with documentation, so your team owns it.</p></div>
+</div>
+</div></section>
+
+<section class="band" id="about"><div class="wrap about">
+<div>
+<h2>About me</h2>
+<p class="muted" style="margin-top:18px">I've worked in IT for more than 20 years and as an independent consultant for the last three. Before that I worked in research and software engineering for companies including Orange Labs, Siemens, Continental and Shareworks by Morgan Stanley.</p>
+<p class="muted">My strongest hands-on platform is AWS, but I choose what fits your setup, in the cloud or on-premise. I work remotely with clients across Europe and worldwide, in English, French or Romanian.</p>
+<div class="clients"><span class="chip">Orange Labs</span><span class="chip">Siemens</span><span class="chip">Continental</span><span class="chip">Shareworks by Morgan Stanley</span><span class="chip">Owliance</span><span class="chip">Zeo Energy</span></div>
+</div>
+<dl>
+<dt>Education</dt><dd>M.Sc. in Artificial Intelligence, B.Sc. in Computer Science, Babeș-Bolyai University</dd>
+<dt>Patent</dt><dd>US 9,307,449 B2, predictive analytics for mobile networks (Orange Labs)</dd>
+<dt>Certifications</dt><dd>AWS certified 2022–2025: Solutions Architect Professional; Security, Data Analytics and Machine Learning Specialty. IBM Cybersecurity Analyst (2024)</dd>
+<dt>Languages</dt><dd>English, French, Romanian</dd>
+<dt>Based in</dt><dd>Athens, Greece, working remotely</dd>
+</dl>
+</div></section>
+
+<section class="band contact" id="contact"><div class="wrap">
+<div><h2>Have a process you'd like to see clearly, or work you'd like to automate?</h2>
+<p>Send me a short message about your situation. I'll reply with an honest view of what makes sense, and a small first step if it does.</p></div>
+<div class="cta">
+<a class="btn primary" href="https://www.linkedin.com/in/adrian-vasile-duda/" target="_blank" rel="noopener">Message me on LinkedIn</a>
+<a class="btn ghost" href="https://www.fiverr.com/adrian_duda" target="_blank" rel="noopener">Hire me on Fiverr</a>
+</div>
+</div></section>
+
+<footer><div class="wrap"><span>© 2026 Adrian V. Duda · Freelance AI &amp; Cloud Consultant</span><span>adrian-duda.com</span></div></footer>
+
+<script>
+{
+const svcs=[
+ {t:'AI agents & LLM apps',d:'Assistants and agents that work with your documents, databases and tools.',l:['Answers from your own data (RAG)','Multi-step tasks across your tools','LLM features in your existing app'],i:'agent'},
+ {t:'Live dashboards & process insights',d:'Replace manual reporting with dashboards that update on their own.',l:['See each process step by step','AI flags bottlenecks and anomalies','Ask questions of the data in plain language'],i:'dash'},
+ {t:'Cloud: optimize, secure, migrate',d:'Lower bills, safer setups and smooth moves to the cloud.',l:['Cost and security reviews','Migrations with minimal downtime','Environments built as code'],i:'cloud'},
+ {t:'AI workflow automation',d:'Hand repetitive work to reliable automated workflows.',l:['Emails, forms and reports on autopilot','Data synced between your tools','n8n, Make, Zapier or custom code'],i:'flow'}
+];
+const ic={
+ agent:'<rect x="6" y="6" width="44" height="44" rx="12" fill="#0F2528" stroke="#2DD4BF" stroke-width="2"/><circle cx="28" cy="28" r="7" fill="#2DD4BF"/><circle cx="28" cy="28" r="13" fill="none" stroke="#2DD4BF" stroke-opacity=".4" stroke-width="2"/>',
+ dash:'<rect x="6" y="6" width="44" height="44" rx="12" fill="#0F2528" stroke="#2DD4BF" stroke-width="2"/><rect x="15" y="30" width="6" height="12" rx="2" fill="#2DD4BF"/><rect x="25" y="22" width="6" height="20" rx="2" fill="#F59E0B"/><rect x="35" y="16" width="6" height="26" rx="2" fill="#2DD4BF"/>',
+ cloud:'<rect x="6" y="6" width="44" height="44" rx="12" fill="#0F2528" stroke="#2DD4BF" stroke-width="2"/><path d="M18 36h20a7 7 0 0 0-1-14 9 9 0 0 0-17 2 6 6 0 0 0-2 12z" fill="none" stroke="#2DD4BF" stroke-width="2.4" stroke-linejoin="round"/>',
+ flow:'<rect x="6" y="6" width="44" height="44" rx="12" fill="#0F2528" stroke="#2DD4BF" stroke-width="2"/><circle cx="17" cy="28" r="4" fill="#2DD4BF"/><circle cx="39" cy="18" r="4" fill="#2DD4BF"/><circle cx="39" cy="38" r="4" fill="#2DD4BF"/><path d="M21 28h6l8-10M27 28l8 10" fill="none" stroke="#2DD4BF" stroke-width="2"/>'
+};
+document.getElementById('svc').innerHTML=svcs.map(s=>`<article class="svc"><svg viewBox="0 0 56 56" aria-hidden="true">${ic[s.i]}</svg><div><h3>${s.t}</h3><p>${s.d}</p><ul>${s.l.map(x=>`<li>${x}</li>`).join('')}</ul></div></article>`).join('');
+
+const cases=[
+ {img:'case-dashboards.webp',alt:'Before and after: monthly Excel reports replaced by a live dashboard that flags anomalies and bottlenecks',w:'Owliance · engineering company, France · 2026',t:'From Excel reports to live process dashboards',p:'Reporting on engineering processes meant days of exporting from Jira, GitHub and Sonar and reformatting in Excel. By the time a report was ready it was out of date, and nobody could see where work got stuck.',l:['Every event streams in real time to a data platform on AWS','Live dashboards show each process step by step','Bottlenecks and anomalies are flagged automatically','AI agents let teams ask questions of their data']},
+ {img:'case-energy.webp',alt:'Diagram: legacy systems, business apps and files flow into a data lake that feeds live dashboards and AI agents',w:'Zeo Energy · energy company, USA · 2023–2025',t:'Data platform, migration and AI agents',p:'A two-year engagement through Cinco: moving legacy data systems to the cloud and building the platform the business now relies on.',l:['Legacy data migrated to AWS with minimal downtime','Data lake and automated pipelines','Live BI dashboards that improved business processes','LLM-powered AI agents for non-technical teams']},
+ {img:'case-stress.webp',alt:'A physiological signal with a stress spike detected, flowing from a contactless sensor through an ML model to an alert',w:'ETSEME · industrial safety, France · 2023',t:'Real-time stress detection with machine learning',p:'End-to-end machine learning behind a contactless sensor that detects stress in industrial workers from physiological signals.',l:['Training data collected through VR-based experiments','Models detecting stress in real time','Alerts that support workers’ well-being']}
+];
+document.getElementById('cases').innerHTML=cases.map((c,i)=>`<article class="case${i%2?' flip':''}"><div class="pic"><img src="${c.img}" alt="${c.alt}" width="1200" height="900" loading="lazy"></div><div><div class="where">${c.w}</div><h3 style="font-size:clamp(22px,2.4vw,28px)">${c.t}</h3><p>${c.p}</p><ul>${c.l.map(x=>`<li>${x}</li>`).join('')}</ul></div></article>`).join('');
+
+const src=[['Documents',95],['Databases',235],['Business tools',375]];
+document.getElementById('sources').innerHTML=src.map(([n,y])=>`<rect x="6" y="${y-30}" width="136" height="60" rx="14" fill="url(#g1)" stroke="#22304A" stroke-width="1.5"/><text x="74" y="${y+5}" text-anchor="middle" font-size="14.5" font-weight="600" fill="#F1F5F9">${n}</text>`).join('');
+const h=[30,42,36,52,66,46];
+document.getElementById('bars').innerHTML=h.map((v,i)=>`<rect x="${428+i*24}" y="${300-v}" width="15" height="${v}" rx="3" fill="${i===4?'#F59E0B':'#2DD4BF'}" opacity="${i===4?1:.85}"/>`).join('');
+document.getElementById('steps').innerHTML=[0,1,2,3,4].map(i=>`<rect x="${426+i*31}" y="312" width="24" height="8" rx="4" fill="${i===2?'#F59E0B':'#2DD4BF'}" opacity="${i===2?1:.55}"/>`).join('');
+const acts=['Weekly report sent','Invoices checked','Emails sorted'];
+document.getElementById('acts').innerHTML=acts.map((t,i)=>`<circle cx="432" cy="${394+i*22}" r="7" fill="#2DD4BF" opacity=".2"/><path d="M428.5 ${394+i*22} l2.5 2.5 l5 -5" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="446" y="${398+i*22}" font-size="13" fill="#F1F5F9">${t}</text>`).join('');
+const qs=[
+ ['Which step slows our','releases down?','Code review: flagged as','the main bottleneck'],
+ ['What do our contracts say','about renewals?','Summary with links to','the source documents'],
+ ['Which invoices don\u2019t match','their orders?','Mismatches listed','for review'],
+ ['Where can we cut our','cloud bill?','Idle resources found,','savings estimated'],
+ ['What are customers asking','about this week?','Top topics, with','draft replies ready']
+];
+const ids=['q1','q2','a1','a2'].map(x=>document.getElementById(x));
+const g=document.getElementById('qa');
+const show=k=>qs[k].forEach((t,i)=>ids[i].textContent=t);
+let k=0; show(0);
+const still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const tick=()=>{g.style.opacity=0; setTimeout(()=>{k=(k+1)%qs.length; show(k); g.style.opacity=1;},still?0:350);};
+setInterval(tick,still?6000:3600);
+}
+</script>
+</body>
+</html>
