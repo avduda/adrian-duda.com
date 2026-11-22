@@ -80,6 +80,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .step p{color:var(--muted);margin-top:8px}
 .about{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px)}
 .about p+p{margin-top:14px}
+.me{display:flex;align-items:center;gap:22px}
+.me img{width:132px;height:132px;border-radius:50%;object-fit:cover;flex:none;border:3px solid var(--teal);box-shadow:0 0 0 6px color-mix(in srgb,var(--teal) 18%,transparent)}
 .about .muted{color:var(--muted)}
 dl{margin:0;display:grid;grid-template-columns:max-content minmax(0,1fr);gap:0 20px}
 dt,dd{padding:12px 0;border-bottom:1px solid var(--line);margin:0}
@@ -173,8 +175,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 <section class="band" id="about"><div class="wrap about">
 <div>
-<h2>About me</h2>
-<p class="muted" style="margin-top:18px">I've worked in IT for more than 20 years and as an independent consultant for the last three. Before that I worked in research and software engineering for companies including Orange Labs, Siemens, Continental and Shareworks by Morgan Stanley.</p>
+<div class="me"><img src="adrian.webp" alt="Adrian V. Duda" width="400" height="400"><div><h2>About me</h2><p class="muted" style="margin-top:6px">Adrian V. Duda · Athens, Greece</p></div></div>
+<p class="muted" style="margin-top:22px">I've worked in IT for more than 20 years and as an independent consultant for the last three. Before that I worked in research and software engineering for companies including Orange Labs, Siemens, Continental and Shareworks by Morgan Stanley.</p>
 <p class="muted">My strongest hands-on platform is AWS, but I choose what fits your setup, in the cloud or on-premise. I work remotely with clients across Europe and worldwide, in English, French or Romanian.</p>
 <div class="clients"><span class="chip">Orange Labs</span><span class="chip">Siemens</span><span class="chip">Continental</span><span class="chip">Shareworks by Morgan Stanley</span><span class="chip">Owliance</span><span class="chip">Zeo Energy</span></div>
 </div>
@@ -215,9 +217,9 @@ const ic={
 document.getElementById('svc').innerHTML=svcs.map(s=>`<article class="svc"><svg viewBox="0 0 56 56" aria-hidden="true">${ic[s.i]}</svg><div><h3>${s.t}</h3><p>${s.d}</p><ul>${s.l.map(x=>`<li>${x}</li>`).join('')}</ul></div></article>`).join('');
 
 const cases=[
- {img:'case-dashboards.webp',alt:'Before and after: monthly Excel reports replaced by a live dashboard that flags anomalies and bottlenecks',w:'Owliance · engineering company, France · 2026',t:'From Excel reports to live process dashboards',p:'Reporting on engineering processes meant days of exporting from Jira, GitHub and Sonar and reformatting in Excel. By the time a report was ready it was out of date, and nobody could see where work got stuck.',l:['Every event streams in real time to a data platform on AWS','Live dashboards show each process step by step','Bottlenecks and anomalies are flagged automatically','AI agents let teams ask questions of their data']},
- {img:'case-energy.webp',alt:'Diagram: legacy systems, business apps and files flow into a data lake that feeds live dashboards and AI agents',w:'Zeo Energy · energy company, USA · 2023–2025',t:'Data platform, migration and AI agents',p:'A two-year engagement through Cinco: moving legacy data systems to the cloud and building the platform the business now relies on.',l:['Legacy data migrated to AWS with minimal downtime','Data lake and automated pipelines','Live BI dashboards that improved business processes','LLM-powered AI agents for non-technical teams']},
- {img:'case-stress.webp',alt:'A physiological signal with a stress spike detected, flowing from a contactless sensor through an ML model to an alert',w:'ETSEME · industrial safety, France · 2023',t:'Real-time stress detection with machine learning',p:'End-to-end machine learning behind a contactless sensor that detects stress in industrial workers from physiological signals.',l:['Training data collected through VR-based experiments','Models detecting stress in real time','Alerts that support workers’ well-being']}
+ {img:'./case-dashboards.webp',alt:'Before and after: monthly Excel reports replaced by a live dashboard that flags anomalies and bottlenecks',w:'Owliance · engineering company, France · 2026',t:'From Excel reports to live process dashboards',p:'Reporting on engineering processes meant days of exporting from Jira, GitHub and Sonar and reformatting in Excel. By the time a report was ready it was out of date, and nobody could see where work got stuck.',l:['Every event streams in real time to a data platform on AWS','Live dashboards show each process step by step','Bottlenecks and anomalies are flagged automatically','AI agents let teams ask questions of their data']},
+ {img:'./case-energy.webp',alt:'Diagram: legacy systems, business apps and files flow into a data lake that feeds live dashboards and AI agents',w:'Zeo Energy · energy company, USA · 2023–2025',t:'Data platform, migration and AI agents',p:'A two-year engagement through Cinco: moving legacy data systems to the cloud and building the platform the business now relies on.',l:['Legacy data migrated to AWS with minimal downtime','Data lake and automated pipelines','Live BI dashboards that improved business processes','LLM-powered AI agents for non-technical teams']},
+ {img:'./case-stress.webp',alt:'A physiological signal with a stress spike detected, flowing from a contactless sensor through an ML model to an alert',w:'ETSEME · industrial safety, France · 2023',t:'Real-time stress detection with machine learning',p:'End-to-end machine learning behind a contactless sensor that detects stress in industrial workers from physiological signals.',l:['Training data collected through VR-based experiments','Models detecting stress in real time','Alerts that support workers’ well-being']}
 ];
 document.getElementById('cases').innerHTML=cases.map((c,i)=>`<article class="case${i%2?' flip':''}"><div class="pic"><img src="${c.img}" alt="${c.alt}" width="1200" height="900" loading="lazy"></div><div><div class="where">${c.w}</div><h3 style="font-size:clamp(22px,2.4vw,28px)">${c.t}</h3><p>${c.p}</p><ul>${c.l.map(x=>`<li>${x}</li>`).join('')}</ul></div></article>`).join('');
 
