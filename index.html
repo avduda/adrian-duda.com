@@ -51,6 +51,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .role{display:flex;gap:10px;align-items:baseline;color:var(--ink);font-weight:500;margin-bottom:18px}
 .dot{flex:none;width:10px;height:10px;border-radius:50%;transform:translateY(-1px);background:var(--teal);box-shadow:0 0 0 5px color-mix(in srgb,var(--teal) 22%,transparent)}
 .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.plink{color:inherit;text-decoration:underline;text-decoration-color:var(--teal);text-underline-offset:3px;text-decoration-thickness:1.5px}.plink:hover{color:var(--teal)}
 .facts{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:30px;color:var(--muted);font-size:15px}
 .facts b{color:var(--ink);font-weight:600}
 .fig{position:relative;aspect-ratio:600/550;width:100%}
@@ -133,7 +134,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <a class="btn primary" href="https://www.linkedin.com/in/adrian-vasile-duda/" target="_blank" rel="noopener">Message me on LinkedIn</a>
 <a class="btn ghost" href="#demos">Watch the demos</a>
 </div>
-<div class="facts"><span><b>20+ years</b> in IT</span><span><b>M.Sc.</b> in Artificial Intelligence</span><span><b>US patent</b> holder</span></div>
+<div class="facts"><span><b>20+ years</b> in IT</span><span><b>M.Sc.</b> in Artificial Intelligence</span><a class="plink" href="https://patents.google.com/patent/US9307449B2/en" target="_blank" rel="noopener" title="View the patent on Google Patents"><b>US patent</b> holder ↗</a></div>
 </div>
 <div class="fig" role="img" aria-label="Diagram: data from documents, databases and business tools flows to an AI agent, which answers questions in plain language, keeps a live dashboard that highlights what needs attention, and completes routine tasks automatically, such as drafting release notes, setting renewal reminders, checking invoices, sending cost alerts, drafting replies and sending weekly reports">
 <svg viewBox="0 0 600 550" aria-hidden="true">
@@ -201,7 +202,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <section class="band alt" id="about"><div class="wrap about">
 <div>
 <div class="me"><img src="adrian.webp" alt="Adrian V. Duda" width="400" height="400"><div><h2>About me</h2><p class="muted" style="margin-top:6px">Adrian V. Duda · Athens, Greece</p></div></div>
-<p class="muted" style="margin-top:22px">I've worked in IT for more than 20 years, and artificial intelligence has been the thread through most of it: an M.Sc. in AI, a US patent in predictive analytics at Orange Labs, algorithm development for automotive at Continental, real-time machine learning for a stress-detection sensor, and today AI agents and LLM apps built on company data.</p>
+<p class="muted" style="margin-top:22px">I've worked in IT for more than 20 years, and artificial intelligence has been the thread through most of it: an M.Sc. in AI, a <a class="plink" href="https://patents.google.com/patent/US9307449B2/en" target="_blank" rel="noopener">US patent in predictive analytics</a> at Orange Labs, algorithm development for automotive at Continental, real-time machine learning for a stress-detection sensor, and today AI agents and LLM apps built on company data.</p>
 <p class="muted">What you get is the full chain from one person: getting the data out of your systems, building reliable pipelines and data platforms, adding the AI on top, and making the results visible in live dashboards. Built to run in production, secure, and documented so your team can own it.</p>
 <p class="muted">AWS is my strongest platform, but I choose what fits your setup, in the cloud or on&#8209;premise. I work remotely with clients across Europe and worldwide, in English, French or Romanian.</p>
 <div class="clients"><span class="chip">Orange Labs</span><span class="chip">Siemens</span><span class="chip">Continental</span><span class="chip">Shareworks by Morgan Stanley</span><span class="chip">Owliance</span><span class="chip">Zeo Energy</span></div>
@@ -209,7 +210,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <dl>
 <dt>Focus</dt><dd>AI agents and LLM apps, machine learning, data platforms and pipelines, BI and process insights, cloud architecture and security</dd>
 <dt>Education</dt><dd>M.Sc. in Artificial Intelligence, B.Sc. in Computer Science, Babeș-Bolyai University</dd>
-<dt>Patent</dt><dd>US 9,307,449 B2, predictive analytics for mobile networks (Orange Labs)</dd>
+<dt>Patent</dt><dd><a class="plink" href="https://patents.google.com/patent/US9307449B2/en" target="_blank" rel="noopener">US 9,307,449 B2</a>, predictive analytics for mobile networks (Orange Labs)</dd>
 <dt>Certifications</dt><dd>AWS certified 2022–2025: Solutions Architect Professional; Security, Data Analytics and Machine Learning Specialty. IBM Cybersecurity Analyst (2024)</dd>
 <dt>Languages</dt><dd>English, French, Romanian</dd>
 <dt>Based in</dt><dd>Athens, Greece, working remotely</dd>
