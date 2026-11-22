@@ -43,6 +43,12 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .links{display:flex;gap:22px;flex-wrap:wrap}
 .links a{color:var(--muted);text-decoration:none;font-size:15px}
 .links a:hover,.links a:focus-visible{color:var(--ink)}
+.menu{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:44px;height:40px;padding:0;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.menu span{display:block;width:20px;height:2px;border-radius:2px;background:var(--ink);transition:transform .2s,opacity .2s}
+.menu[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}.menu[aria-expanded=true] span:nth-child(2){opacity:0}.menu[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.menu:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+[id]{scroll-margin-top:72px}
+@media(max-width:600px){.menu{display:flex}nav .links{display:none;flex-direction:column;gap:0;width:100%;padding:6px 0 4px}nav .links.open{display:flex}nav .links a{font-size:17px;color:var(--ink);padding:13px 2px;border-top:1px solid var(--line)}}
 .btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:12px;font-weight:600;text-decoration:none;font-size:16px;border:1px solid transparent;transition:transform .15s ease}
 .btn:hover{transform:translateY(-1px)}
 .btn:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
@@ -125,13 +131,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .dnote{font-size:13.5px;color:var(--muted);margin-top:12px}
 @media(max-width:900px){.demo{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:900px){.caps{grid-template-columns:repeat(2,minmax(0,max-content))}.hero,.head,.about,.contact .wrap{grid-template-columns:minmax(0,1fr)}.grid4{grid-template-columns:minmax(0,1fr)}.case,.case.flip{grid-template-columns:minmax(0,1fr)}.case.flip .pic{order:0}.steps{grid-template-columns:minmax(0,1fr)}.contact .cta{justify-content:flex-start}.contact .mail{text-align:left}}
-@media(max-width:600px){.caps{grid-template-columns:minmax(0,1fr)}.caps li{white-space:normal}.links{display:none}.svc{grid-template-columns:minmax(0,1fr)}.lede{font-size:17.5px}dl{grid-template-columns:minmax(0,1fr)}dt{padding-bottom:0;border:0}}
+@media(max-width:600px){.caps{grid-template-columns:minmax(0,1fr)}.caps li{white-space:normal}.svc{grid-template-columns:minmax(0,1fr)}.lede{font-size:17.5px}dl{grid-template-columns:minmax(0,1fr)}dt{padding-bottom:0;border:0}}
 </style>
 </head>
 <body>
 <nav><div class="wrap">
 <a class="brand" href="#top">Adrian V. Duda</a>
-<div class="links"><a href="#services">Services</a><a href="#demos">Demos</a><a href="#work">Work</a><a href="#how">How I work</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+<button class="menu" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+<div class="links" id="navlinks"><a href="#services">Services</a><a href="#demos">Demos</a><a href="#work">Work</a><a href="#how">How I work</a><a href="#about">About</a><a href="#contact">Contact</a></div>
 </div></nav>
 
 <header class="band" id="top"><div class="wrap hero">
@@ -323,6 +330,13 @@ const pick=(i,scroll)=>{const x=demos[i];
 dl.addEventListener('click',e=>{const b=e.target.closest('.dbtn');if(b)pick(+b.dataset.i,window.innerWidth<900);});
 document.getElementById('svc').addEventListener('click',e=>{const a=e.target.closest('.svc');if(!a)return;e.preventDefault();pick(+a.dataset.demo,true);});
 (function(){var a=document.getElementById('mail');if(!a)return;var e=a.dataset.u+'@'+a.dataset.d;a.textContent=e;a.href='mailto:'+e;})();
+</script>
+<script>
+(()=>{const b=document.querySelector('.menu'),l=document.getElementById('navlinks');if(!b||!l)return;
+const set=o=>{l.classList.toggle('open',o);b.setAttribute('aria-expanded',o)};
+b.addEventListener('click',()=>set(!l.classList.contains('open')));
+l.addEventListener('click',e=>{if(e.target.closest('a'))set(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')set(false)});})();
 </script>
 </body>
 </html>
