@@ -70,7 +70,9 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px
 .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 64px;align-items:end;margin-bottom:40px}
 .head p{color:var(--muted);font-size:17.5px}
 .grid4{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.svc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;display:grid;grid-template-columns:56px minmax(0,1fr);gap:18px}
+.svc{color:inherit;text-decoration:none;cursor:pointer;transition:border-color .2s,transform .2s;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;display:grid;grid-template-columns:56px minmax(0,1fr);gap:18px}
+.svc:hover{border-color:var(--teal);transform:translateY(-2px)}.svc:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.svc .watch{display:inline-block;margin-top:14px;color:var(--teal);font-weight:600;font-size:14.5px}
 .svc svg{width:56px;height:56px}
 .svc p{color:var(--muted);margin-top:8px}
 .svc ul{margin:14px 0 0;padding-left:18px;color:var(--ink)}
@@ -137,7 +139,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <div class="role"><span class="dot" aria-hidden="true"></span>Freelance AI &amp; Cloud Consultant · Athens, Greece · Remote</div>
 <h1>Your company data, turned into answers, live insights and automated work</h1>
 <ul class="caps"><li>AI agents &amp; LLM apps</li><li>Live dashboards &amp; process insights</li><li>Cloud migration &amp; optimization</li><li>Workflow automation</li></ul>
-<p class="lede">I build AI that works with your documents and tools, dashboards that show where your processes get stuck, and the cloud platforms underneath, in the cloud or on&#8209;premise.</p>
+<p class="lede">I build AI that works with all your data sources and tools, and live dashboards that surface the insights that matter, like where your processes get stuck. I also design the right foundation for it, in the cloud, on&#8209;premise or hybrid, based on your needs, security and budget.</p>
 <div class="cta">
 <a class="btn primary" href="https://www.linkedin.com/in/adrian-vasile-duda/" target="_blank" rel="noopener">Message me on LinkedIn</a>
 <a class="btn ghost" href="#demos">Watch the demos</a>
@@ -211,13 +213,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <div>
 <div class="me"><img src="adrian.webp" alt="Adrian V. Duda" width="400" height="400"><div><h2>About me</h2><p class="muted" style="margin-top:6px">Adrian V. Duda · Athens, Greece</p></div></div>
 <p class="muted" style="margin-top:22px">I've worked in IT for more than 20 years, and artificial intelligence has been the thread through most of it: an M.Sc. in AI, a <a class="plink" href="https://patents.google.com/patent/US9307449B2/en" target="_blank" rel="noopener">US patent in predictive analytics</a> at Orange Labs, algorithm development for automotive at Continental, real-time machine learning for a stress-detection sensor, and today AI agents and LLM apps built on company data.</p>
-<p class="muted">What you get is the full chain from one person: getting the data out of your systems, building reliable pipelines and data platforms, adding the AI on top, and making the results visible in live dashboards. Built to run in production, secure, and documented so your team can own it.</p>
+<p class="muted">You work with one specialist across the whole chain, with no hand-offs between vendors: getting the data out of your systems, building reliable pipelines and data platforms, adding AI on top, and turning it into live dashboards that highlight the insights that matter, which your team can explore by simply asking questions in plain language. Built to run in production, secure, and documented so your team can own it.</p>
 <p class="muted">AWS is my strongest platform, but I choose what fits your setup, in the cloud or on&#8209;premise. I work remotely with clients across Europe and worldwide, in English, French or Romanian.</p>
 <div class="clients"><span class="chip">Orange Labs</span><span class="chip">Siemens</span><span class="chip">Continental</span><span class="chip">Shareworks by Morgan Stanley</span><span class="chip">Owliance</span><span class="chip">Zeo Energy</span></div>
 </div>
 <dl>
 <dt>Focus</dt><dd>AI agents and LLM apps, machine learning, data platforms and pipelines, BI and process insights, cloud architecture and security</dd>
-<dt>Education</dt><dd>M.Sc. in Artificial Intelligence, B.Sc. in Computer Science, Babeș-Bolyai University</dd>
+<dt>Education</dt><dd>M.Sc. in Artificial Intelligence, B.Sc. in Computer Science, Babeș-Bolyai University, Cluj-Napoca, Romania</dd>
 <dt>Patent</dt><dd><a class="plink" href="https://patents.google.com/patent/US9307449B2/en" target="_blank" rel="noopener">US 9,307,449 B2</a>, predictive analytics for mobile networks (Orange Labs)</dd>
 <dt>Certifications</dt><dd>AWS certified 2022–2025: Solutions Architect Professional; Security, Data Analytics and Machine Learning Specialty. IBM Cybersecurity Analyst (2024)</dd>
 <dt>Languages</dt><dd>English, French, Romanian</dd>
@@ -251,7 +253,7 @@ const ic={
  cloud:'<rect x="6" y="6" width="44" height="44" rx="12" fill="#0F2528" stroke="#2DD4BF" stroke-width="2"/><path d="M18 36h20a7 7 0 0 0-1-14 9 9 0 0 0-17 2 6 6 0 0 0-2 12z" fill="none" stroke="#2DD4BF" stroke-width="2.4" stroke-linejoin="round"/>',
  flow:'<rect x="6" y="6" width="44" height="44" rx="12" fill="#0F2528" stroke="#2DD4BF" stroke-width="2"/><circle cx="17" cy="28" r="4" fill="#2DD4BF"/><circle cx="39" cy="18" r="4" fill="#2DD4BF"/><circle cx="39" cy="38" r="4" fill="#2DD4BF"/><path d="M21 28h6l8-10M27 28l8 10" fill="none" stroke="#2DD4BF" stroke-width="2"/>'
 };
-document.getElementById('svc').innerHTML=svcs.map(s=>`<article class="svc"><svg viewBox="0 0 56 56" aria-hidden="true">${ic[s.i]}</svg><div><h3>${s.t}</h3><p>${s.d}</p><ul>${s.l.map(x=>`<li>${x}</li>`).join('')}</ul></div></article>`).join('');
+document.getElementById('svc').innerHTML=svcs.map((s,i)=>`<a class="svc" href="#demos" data-demo="${i}" aria-label="${s.t}: watch the demo"><svg viewBox="0 0 56 56" aria-hidden="true">${ic[s.i]}</svg><div><h3>${s.t}</h3><p>${s.d}</p><ul>${s.l.map(x=>`<li>${x}</li>`).join('')}</ul><span class="watch">▶ Watch the demo</span></div></a>`).join('');
 
 const cases=[
  {img:'./case-dashboards.webp',alt:'Before and after: monthly Excel reports replaced by a live dashboard that flags anomalies and bottlenecks',w:'Owliance (Tessi group) · insurance services &amp; software, France · 2026',t:'From Excel reports to live process dashboards',p:'Reporting on software delivery processes meant days of exporting from Jira, GitHub and Sonar and reformatting in Excel. By the time a report was ready it was out of date, and nobody could see where work got stuck.',l:['Every event streams in real time to a data platform on AWS','Live dashboards show each process step by step','Bottlenecks and anomalies are flagged automatically','AI agents let teams ask questions of their data']},
@@ -314,10 +316,12 @@ const demos=[
 ];
 const dv=document.getElementById('dv'),dl=document.getElementById('dlist');
 dl.innerHTML=demos.map((x,i)=>`<button class="dbtn" type="button" data-i="${i}" aria-pressed="${i===0}"><img src="${x.f}.webp" alt="" width="120" height="68" loading="lazy"><div><b>${x.t}</b><span>${x.d} · ${x.l}</span></div></button>`).join('');
-dl.addEventListener('click',e=>{const b=e.target.closest('.dbtn');if(!b)return;const x=demos[+b.dataset.i];
- dl.querySelectorAll('.dbtn').forEach(q=>q.setAttribute('aria-pressed',q===b));
+const pick=(i,scroll)=>{const x=demos[i];
+ dl.querySelectorAll('.dbtn').forEach(q=>q.setAttribute('aria-pressed',+q.dataset.i===i));
  dv.poster=`./${x.f}.webp`;dv.src=`./${x.f}.mp4`;dv.play().catch(()=>{});
- if(window.innerWidth<900)dv.scrollIntoView({behavior:'smooth',block:'center'});});
+ if(scroll)dv.scrollIntoView({behavior:'smooth',block:'center'});};
+dl.addEventListener('click',e=>{const b=e.target.closest('.dbtn');if(b)pick(+b.dataset.i,window.innerWidth<900);});
+document.getElementById('svc').addEventListener('click',e=>{const a=e.target.closest('.svc');if(!a)return;e.preventDefault();pick(+a.dataset.demo,true);});
 (function(){var a=document.getElementById('mail');if(!a)return;var e=a.dataset.u+'@'+a.dataset.d;a.textContent=e;a.href='mailto:'+e;})();
 </script>
 </body>
